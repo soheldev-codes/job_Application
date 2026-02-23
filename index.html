@@ -30,39 +30,49 @@
   </head>
   <body>
 
-    <header class="container mx-auto">
+    <header class="container mx-auto p-6">
 
-        <h1 class="text-3xl font-bold mt-5 ">Job Application Tracker</h1>
+        <h1 class="text-3xl font-bold mt-5 ">Job Application</h1>
 
-        <div class="dashbord flex gap-5 mt-5 justify-between ">
-
-            <div class="card bg-[#FFFFFF] flex-1 p-4 rounded shadow">
-                <p>Total</p>
-                <p id="totalJobCount">8</p>
-            </div>
-            <div class="card bg-[#FFFFFF] flex-1 p-4 rounded shadow ">
-                <p>Interview</p>
-                <p id="interviewCount">0</p>
-            </div>
-            <div class="card bg-[#FFFFFF] flex-1 p-4  rounded shadow">
-                <p>Rejected</p>
-                <p id="rejectedCount">0</p>
-            </div>
-
+        <section class="container mx-auto p-6 grid md:grid-cols-3 grid-cols-1 gap-4">
+        <div class="bg-white p-5 rounded-xl shadow">
+            <h2 class="text-gray-500 text-sm">Total Jobs</h2>
+            <p id="totalJobCount" class="text-2xl font-bold">0</p>
         </div>
+
+        <div class="bg-white p-5 rounded-xl shadow">
+            <h2 class="text-blue-500 text-sm">Interview</h2>
+            <p id="interviewCount" class="text-2xl font-bold">0</p>
+        </div>
+
+        <div class="bg-white p-5 rounded-xl shadow">
+            <h2 class="text-red-500 text-sm">Rejected</h2>
+            <p id="rejectedCount" class="text-2xl font-bold">0</p>
+        </div>
+    </section>
 
         <hr class="my-5 text-gray-200">
 
     </header>
 
-    <main class="container mx-auto">
+    <main class="container mx-auto p-6">
         <!-- Avalable jobs -->
+          <div class="flex justify-between items-center mb-4">
+            <h2 class="text-xl font-bold">Available Jobs</h2>
+            <span id="tabCount" class="text-gray-500 text-sm">8 Jobs</span>
+        </div>
         <!-- Filterred btn -->
         <div class="flex gap-4 ">   
             <button onclick="tabButton(event,'All')" class="tab-btn bg-black text-white py-2 px-4 rounded">All</button>
             <button onclick="tabButton(event,'Interview')" class="tab-btn bg-gray-200 py-2 px-4 rounded">Interview</button>
             <button onclick="tabButton(event,'Rejected')" class="tab-btn bg-gray-200 py-2 px-4 rounded">Rejected</button>
         </div>
+       
+
+
+
+        <!--  Cards Container -->
+        <div id="jobsContainer" class=" gap-6"></div>
 
 
 
