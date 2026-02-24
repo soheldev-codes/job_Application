@@ -52,9 +52,17 @@ function renderJobs() {
         filterJobs = allJobs.filter(job => job.status === currentTab);
     }
 
+    // Avalaible Jobs Count Conditional Use
+    const tabCount =  document.getElementById("tabCount")
+
+     if (currentTab === "All") {
+       tabCount.innerText = filterJobs.length + " Jobs";
+    } else {
+        tabCount.innerText = filterJobs.length ? filterJobs.length + " of " + allJobs.length + " jobs" : filterJobs.length + " jobs";
+    }
 
 
-     document.getElementById("tabCount").innerText = filterJobs.length + " Jobs";
+    
 
     // No Jobs Then Show Empty State Design
      if (filterJobs.length === 0) {
