@@ -81,7 +81,7 @@ function renderJobs() {
             <div>
             <h3 class="text-lg font-bold">${job.company}</h3>
             <p class="text-sm text-gray-500">${job.position}</p>
-            <p class="text-sm mt-2">${job.location} • ${job.type}</p>
+            <p class="text-sm mt-2">${job.location} - ${job.type}</p>
             <p class="text-sm font-semibold mt-2">${job.salary}</p>
             ${job.status ? `
             <span class="inline-block mt-3 mb-2 px-3 py-1 text-xs font-semibold rounded
@@ -136,8 +136,6 @@ function deleteJob(id) {
     allJobs = allJobs.filter(j => j.id !== id);
     renderJobs();
 }
-
-
 
  renderJobs()
 
