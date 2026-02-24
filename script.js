@@ -15,21 +15,15 @@ let allJobs = [
 // Default Tab Button Filter 
 let currentTab = "All"
 
-function tabButton(event, id) {
-    
-    currentTab = id;
-    console.log(currentTab);
-
+function tabButton(event, tab) { 
+    currentTab = tab;
     const tabBtns = document.querySelectorAll(".tab-btn");
-
     tabBtns.forEach(btn => {
         btn.classList.remove("bg-black", "text-white");
         btn.classList.add("bg-gray-200", "text-black");
     });
-
     event.currentTarget.classList.remove("bg-gray-200", "text-black");
     event.currentTarget.classList.add("bg-black", "text-white");
-
      renderJobs();
 }
 
